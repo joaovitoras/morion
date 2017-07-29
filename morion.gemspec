@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["João Vitor Alves Silva"]
   s.email       = ["joao.valves@hotmail.com"]
   s.homepage    = "https://github.com/joaovitoras/morion"
-  s.summary     = "Morion is a Rails Engine that enables the display of all images of a application"
-  s.description = "Morion is a Rails Engine that enables the display of all images of a application"
+  s.summary     = "Rails image list"
+  s.description = "Morion is a Rails Engine that enables the display of all images in application"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
