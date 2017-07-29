@@ -3,7 +3,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/morion.svg)](https://badge.fury.io/rb/morion)
 
-Morion is a Rails Engine that enables the display of all images of a application
+Morion allows viewing of all images from a rails application
 
 ## Get Started
 
