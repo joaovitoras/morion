@@ -2,6 +2,7 @@
 ![Morion Logo](https://raw.github.com/joaovitoras/morion/master/app/assets/images/morion/morion_brand_with_bg.png)
 
 [![Gem Version](https://badge.fury.io/rb/morion.svg)](https://badge.fury.io/rb/morion)
+[![Build Status](https://travis-ci.org/joaovitoras/morion.svg?branch=master)](https://travis-ci.org/joaovitoras/morion)
 
 Morion allows viewing of all images from a rails application
 
