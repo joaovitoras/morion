@@ -44,7 +44,7 @@ bundle install
 ## Running
 Dummy is and app provided by rails to test engine mounted to route /morion
 ```sh
-cd /test/dummy
+cd test/dummy
 rails s
 open http://localhost:3000/morion
 ```
