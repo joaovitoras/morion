@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    morion (0.0.2)
+    morion (0.0.3)
       font-awesome-rails (~> 4.0)
       jquery-rails (~> 4.1, >= 4.1.0)
       rails (~> 4.0)
