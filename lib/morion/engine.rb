@@ -3,6 +3,8 @@ module Morion
     require 'jquery-rails'
     require 'font-awesome-rails'
     require 'find'
+    require_relative 'folders_and_files_finder'
+    require_relative 'file'
 
     isolate_namespace Morion
 

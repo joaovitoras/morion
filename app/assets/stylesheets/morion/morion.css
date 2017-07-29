@@ -105,9 +105,9 @@ i.white {
 }
 
 @keyframes copied {
-  0%   {background-color: transparent;}
+  0%   {background-color: white;}
   50%  {background-color: #364039; color: white;}
-  100% {background-color: transparent;}
+  100% {background-color: white;}
 }
 
 @keyframes copied-icon {

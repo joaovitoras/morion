@@ -47,3 +47,4 @@ test/dummy/tmp/
 *.gem
 *.log
 *.sqlite3
+*.log

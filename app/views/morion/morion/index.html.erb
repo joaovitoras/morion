@@ -13,18 +13,18 @@
       <div class="columns is-multiline is-mobile">
         <% folder.second.each do |file| %>
           <div class="column is-narrow">
-            <div class="img-box" data-balloon="<%= file[:asset_path] %>" data-balloon-pos="up">
-              <% if file[:extension] == '.svg' %>
-                <%= image_tag(file[:asset_path], class: 'full-dimenssion') %>
+            <div class="img-box" data-balloon="<%= file.asset_path %>" data-balloon-pos="up">
+              <% if file.extension == '.svg' %>
+                <%= image_tag(file.asset_path, class: 'full-dimenssion') %>
               <% else %>
-                <%= image_tag(file[:asset_path]) %>
+                <%= image_tag(file.asset_path) %>
               <% end %>
 
-              <span class="icon is-small copy-icon" data-clipboard-text="<%= file[:asset_path] %>">
-                <i class="fa fa-copy" data-path="<%= file[:file_name] %>"></i>
+              <span class="icon is-small copy-icon" data-clipboard-text="<%= file.asset_path %>">
+                <i class="fa fa-copy" data-path="<%= file.filename %>"></i>
               </span>
 
-              <span class="extension"><%= file[:extension] %></span>
+              <span class="extension"><%= file.extension %></span>
             </div>
           </div>
         <% end %>
