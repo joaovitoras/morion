@@ -45,3 +45,5 @@ bower.json
 
 test/dummy/tmp/
 *.gem
+*.log
+*.sqlite3
