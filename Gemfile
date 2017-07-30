@@ -13,3 +13,12 @@ gemspec
 # To use debugger
 # gem 'debugger'
 # gem 'pry-rails'
+
+group :test do
+  gem 'coveralls'
+end
+
+group :development, :test do
+  gem 'pry'
+  gem 'pry-rails'
+end
