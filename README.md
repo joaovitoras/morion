@@ -4,7 +4,7 @@
 [![Gem Version](https://badge.fury.io/rb/morion.svg)](https://badge.fury.io/rb/morion)
 [![Build Status](https://travis-ci.org/joaovitoras/morion.svg?branch=master)](https://travis-ci.org/joaovitoras/morion)
 [![Code Climate](https://img.shields.io/codeclimate/github/joaovitoras/morion.svg)](https://codeclimate.com/github/joaovitoras/morion)
-[![Coverage Status](https://img.shields.io/coveralls/joaovitoras/morion.svg)](https://coveralls.io/github/joaovitoras/morion)
+[![Coverage Status](https://coveralls.io/repos/github/joaovitoras/morion/badge.svg?branch=master)](https://coveralls.io/github/joaovitoras/morion?branch=master)
 [![Inline docs](http://inch-ci.org/github/joaovitoras/morion.svg)]([https://inch-ci.org/github/joaovitoras/morion)
 
 Morion allows viewing of all images from a rails application
