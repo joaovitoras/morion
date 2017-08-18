@@ -16,7 +16,7 @@ module Morion
 
     def file_paths
       Find.find(*folder_paths).select do |path|
-        path =~ EXTENSION_FILTER_REGEX
+        path =~ EXTENSION_FILTER_REGEX && permitted_path?(path)
       end
     end
 
@@ -26,6 +26,26 @@ module Morion
       end
 
       @folders = files.group_by {|file| file.folder_path }
+    end
+
+    private
+
+    def permitted_path?(path)
+      if Morion::Config.blacklist.any?
+        !blacklisted?(path)
+      else
+        true
+      end
+    end
+
+    def blacklisted?(path)
+      include_path?(path, Morion::Config.blacklist)
+    end
+
+    def include_path?(path, list)
+      list.any? do |filter|
+        path.match(/#{filter}/)
+      end
     end
   end
 end
