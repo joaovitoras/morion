@@ -49,3 +49,4 @@ test/dummy/tmp/
 *.log
 *.sqlite3
 *.log
+test/dummy/log/development.log
