@@ -52,7 +52,7 @@ body {
 }
 
 .hero.is-small .hero-body {
-  padding: 10px 0px;
+  padding: 10px 1.5rem;
 }
 
 .hero.is-small .title{
