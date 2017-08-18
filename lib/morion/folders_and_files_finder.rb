@@ -33,6 +33,8 @@ module Morion
     def permitted_path?(path)
       if Morion::Config.blacklist.any?
         !blacklisted?(path)
+      elsif Morion::Config.whitelist.any?
+        whitelisted?(path)
       else
         true
       end
@@ -40,6 +42,10 @@ module Morion
 
     def blacklisted?(path)
       include_path?(path, Morion::Config.blacklist)
+    end
+
+    def whitelisted?(path)
+      include_path?(path, Morion::Config.whitelist)
     end
 
     def include_path?(path, list)
