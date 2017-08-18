@@ -28,7 +28,7 @@ module Morion
     end
 
     def folder_path
-      @path.gsub(@rails_root, "").match(/(.*\/).*/)[1]
+      @path.gsub(@rails_root, "").match(/(.*)\/.*/)[1]
     end
   end
 end
