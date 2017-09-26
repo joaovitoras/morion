@@ -13,7 +13,10 @@ Morion allows viewing of all images from a rails application
 Add this line to your application’s Gemfile:
 
 ```ruby
-gem "morion"
+group :development do
+  gem "morion"
+end
+
 ```
 
 And run bundle to install morion and dependencies
@@ -25,7 +28,9 @@ bundle install
 Next, add the dashboard to your `config/routes.rb`.
 
 ```ruby
-mount Morion::Engine => "/morion"
+if Rails.env.development?
+  mount Morion::Engine => "/morion"
+end
 ```
 
 To finish visit morion page
