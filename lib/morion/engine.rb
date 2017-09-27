@@ -2,7 +2,6 @@ module Morion
   class Engine < ::Rails::Engine
     require 'jquery-rails'
     require 'font-awesome-sass'
-    require 'bulma-rails'
     require 'find'
     require_relative 'folders_and_files_finder'
     require_relative 'file'
