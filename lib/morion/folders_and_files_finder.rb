@@ -1,55 +1,50 @@
+require 'find'
+require 'morion/file_ref'
+
 module Morion
   class FoldersAndFilesFinder
-    EXTENSION_FILTER_REGEX = /.*(\.jpg|\.jpeg|\.png|\.svg)/
+    EXTENSION_FILTER_REGEX = /.*(\.jpg|\.jpeg|\.png|\.svg)/.freeze
 
-    def initialize
-      @rails_root = Rails.root.to_s
-    end
-
-    def folder_paths
-      app_assets_paths = Rails.application.assets.paths.select {|path| path =~ /#{@rails_root}/}
-      app_assets_paths.map do |path|
-        pathname = Pathname.new(path)
-        pathname.exist? ? pathname.cleanpath : nil
-      end.compact
-    end
-
-    def file_paths
-      Find.find(*folder_paths).select do |path|
-        path =~ EXTENSION_FILTER_REGEX && permitted_path?(path)
-      end
+    def initialize(blacklist:)
+      @current_path = Dir.pwd
+      @current_path_slashed = @current_path + '/'
+      @blacklist = blacklist
     end
 
     def files_by_folders
       files = file_paths.map do |path|
-        File.new(path, folder_paths, @rails_root)
+        FileRef.new(path, @current_path_slashed)
       end
 
-      @folders = files.group_by {|file| file.folder_path }
+      format_result(files)
+    end
+
+    def file_paths
+      Find.find(@current_path).select do |path|
+        path =~ EXTENSION_FILTER_REGEX && permitted_path?(path)
+      end
+    end
+
+    def format_result(files)
+      files.group_by(&:folder_path)
     end
 
     private
 
     def permitted_path?(path)
-      if Morion::Config.blacklist.any?
+      if @blacklist.any?
         !blacklisted?(path)
-      elsif Morion::Config.whitelist.any?
-        whitelisted?(path)
       else
         true
       end
     end
 
     def blacklisted?(path)
-      include_path?(path, Morion::Config.blacklist)
+      include_path?(path)
     end
 
-    def whitelisted?(path)
-      include_path?(path, Morion::Config.whitelist)
-    end
-
-    def include_path?(path, list)
-      list.any? do |filter|
+    def include_path?(path)
+      @blacklist.any? do |filter|
         path.match(/#{filter}/)
       end
     end

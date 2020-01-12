@@ -1,12 +1,13 @@
-require "morion/config"
-require "morion/engine"
+require 'morion/version'
+require 'morion/web'
 
 module Morion
-  def self.config(&block)
-    if block_given?
-      block.call(Morion::Config)
-    else
-      Morion::Config
-    end
+  class Error < StandardError
+  end
+
+  module_function
+
+  def start
+    Web.app.run!
   end
 end

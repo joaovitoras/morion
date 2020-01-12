@@ -1,63 +1,44 @@
+# Morion
 
-![Morion Logo](https://raw.github.com/joaovitoras/morion/master/app/assets/images/morion/morion_brand_with_bg_reversed.png)
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/morion`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-[![Gem Version](https://badge.fury.io/rb/morion.svg)](https://badge.fury.io/rb/morion)
-[![Build Status](https://travis-ci.org/joaovitoras/morion.svg?branch=master)](https://travis-ci.org/joaovitoras/morion)
-[![Code Climate](https://img.shields.io/codeclimate/github/joaovitoras/morion.svg)](https://codeclimate.com/github/joaovitoras/morion)
-[![Inline docs](http://inch-ci.org/github/joaovitoras/morion.svg)]([https://inch-ci.org/github/joaovitoras/morion)
+TODO: Delete this and the text above, and describe your gem
 
-Morion allows viewing of all images from a rails application
+## Installation
 
-## Get Started
-
-Add this line to your application’s Gemfile:
+Add this line to your application's Gemfile:
 
 ```ruby
-group :development do
-  gem "morion"
-end
-
+gem 'morion'
 ```
 
-And run bundle to install morion and dependencies
+And then execute:
 
-```sh
-bundle install
-```
+    $ bundle install
 
-Next, add the dashboard to your `config/routes.rb`.
+Or install it yourself as:
 
-```ruby
-if Rails.env.development?
-  mount Morion::Engine => "/morion"
-end
-```
+    $ gem install morion
 
-To finish visit morion page
+## Usage
 
-```sh
-open http://localhost:3000/morion
-```
+TODO: Write usage instructions here
 
-![Morion Logo](https://raw.github.com/joaovitoras/morion/master/app/assets/images/morion/preview.png)
+## Development
 
-## Development Environment
+After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-```sh
-git clone git@github.com:joaovitoras/morion.git
-cd morion
-bundle install
-```
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
-## Running
-Dummy is and app provided by rails to test engine mounted to route /morion
-```sh
-rails s
-open http://localhost:3000/morion
-```
+## Contributing
 
-## TODO
-- [x] Whitelist and Blacklist config
-- [ ] Find file by name
-- [ ] find folder
-- [ ] copy folder path
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/morion. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/morion/blob/master/CODE_OF_CONDUCT.md).
+
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the Morion project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/morion/blob/master/CODE_OF_CONDUCT.md).

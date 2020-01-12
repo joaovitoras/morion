@@ -1,27 +1,31 @@
-$:.push File.expand_path("../lib", __FILE__)
+require_relative 'lib/morion/version'
 
-# Maintain your gem's version:
-require "morion/version"
+Gem::Specification.new do |spec|
+  spec.name          = 'morion'
+  spec.version       = Morion::VERSION
+  spec.authors       = ['João Vitor Alves']
+  spec.email         = ['joao.vitor@redealumni.com']
 
-# Describe your gem and declare its dependencies:
-Gem::Specification.new do |s|
-  s.name        = "morion"
-  s.version     = Morion::VERSION
-  s.authors     = ["João Vitor Alves Silva"]
-  s.email       = ["joao.valves@hotmail.com"]
-  s.homepage    = "https://github.com/joaovitoras/morion"
-  s.summary     = "Display all images of a Rails app"
-  s.description = "Morion allows viewing of all images from a rails application"
-  s.license     = "MIT"
+  spec.homepage    = 'https://github.com/joaovitoras/morion'
+  spec.summary     = 'Display all images of a Rails app'
+  spec.description = 'Morion allows viewing of all images from a rails application'
+  spec.license = 'MIT'
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  spec.metadata['homepage_uri'] = spec.homepage
 
-  s.add_dependency "rails", ['>= 4.0', '< 6']
-  s.add_dependency 'sass-rails', ['>= 4.0', '< 6']
-  s.add_dependency "jquery-rails", ['>= 3.0', '< 5']
-  s.add_dependency "font-awesome-sass", ['>= 4.2.0', '<= 4.7.0']
-  s.add_dependency "font-awesome-rails", ['>= 3.0', '< 5']
+  # Specify which files should be added to the gem when it is released.
+  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  end
 
-  s.add_development_dependency "sqlite3", "~> 1.3", ">= 1.3.3"
+  spec.executables << 'morion'
+  spec.require_paths = ['lib']
+
+  spec.add_dependency 'sinatra', '~> 2.0'
+  spec.add_dependency 'sinatra-asset-pipeline', '~> 2.2'
+
+  spec.add_development_dependency 'rspec', '~> 3.8'
+  spec.add_development_dependency 'rubocop'
 end

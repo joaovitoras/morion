@@ -1,0 +1,24 @@
+<% @folders.each do |folder, files| %>
+  <section class="hero is-morion is-small">
+    <div class="hero-body">
+      <h1 class="title">
+        <%= folder %>
+      </h1>
+    </div>
+  </section>
+  <div class="section">
+    <div class="columns">
+      <% files.each do |file| %>
+        <div class="column">
+          <div class="img-box" data-balloon="<%= file.path %>" data-balloon-pos="up">
+            <% if file.extension == '.svg' %>
+              <%= img(file.relative_path, class: 'full-dimenssion') %>
+            <% else %>
+              <%= img(file.relative_path) %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

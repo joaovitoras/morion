@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/mini-reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+  </head>
+  <body>
+    <div class="header is-morion strong">
+      <div class="columns is-space-between is-vcentered">
+        <div class="column has-text-centered">
+          <%= img "images/morion_brand.png", class: 'brand' %>
+          <p>Easy to see your image assets</p>
+        </div>
+        <div class="column has-text-centered">
+          <p>Click on <span class="fa fa-copy"></span> to copy Rails file path</p>
+        </div>
+
+
+        <div class="column has-text-centered">
+          <a class="link is-info">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>
